@@ -2,7 +2,7 @@
 sidebarDepth: 2
 ---
 
-# NCUHOME React 代码风格指南
+# React 代码风格指南
 
 ## [react/jsx-curly-brace-presence](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md)
 
@@ -11,7 +11,9 @@ sidebarDepth: 2
 ```javascript
 // bad
 <App prop={'foo'}>{'Hello World'}</App>;
+```
 
+```javascript
 // good
 <App prop="foo">Hello World</App>;
 ```
@@ -23,15 +25,11 @@ sidebarDepth: 2
 ```javascript
 // bad
 <React.Fragment></React.Fragment>;
+```
 
+```javascript
 // good
 <></>;
-
-<div>
-    {[1, 2, 3].map((value) => (
-        <React.Fragment key={value}>{value}</React.Fragment>
-    ))}
-</div>;
 ```
 
 > <></> 不需要额外引入 Fragment 组件
@@ -52,7 +50,9 @@ sidebarDepth: 2
         <>{value}</>
     ))}
 </div>;
+```
 
+```javascript
 // good
 <ul>
     {[1, 2, 3].map((value) => (
@@ -75,7 +75,9 @@ sidebarDepth: 2
 <div>// empty div</div>;
 <div>/* empty div */</div>;
 
+```
 
+```javascript
 // good
 <div>{/* empty div */}</div>;
 <div /* empty div */ />;
@@ -88,7 +90,9 @@ sidebarDepth: 2
 ```javascript
 // bad
 <Foo name="foo" name="bar"/>;
+```
 
+```javascript
 // good
 <Foo name="foo"/>;
 ```
@@ -100,7 +104,9 @@ sidebarDepth: 2
 ```javascript
 // bad
 <Foo/>;
+```
 
+```javascript
 // good
 import Foo from './Foo';
 
@@ -115,7 +121,9 @@ import Foo from './Foo';
 // bad
 <FOO/>;
 <FOO_BAR/>;
+```
 
+```javascript
 // good
 <Foo/>;
 <FooBar/>;
@@ -131,7 +139,9 @@ import Foo from './Foo';
 import React from 'react';
 
 <div/>;
+```
 
+```javascript
 // good
 /* eslint no-unused-vars: "error" */
 import React from 'react';
@@ -147,7 +157,9 @@ import React from 'react';
 // bad
 /* eslint no-unused-vars: "error" */
 import Foo from './Foo';
+```
 
+```javascript
 // good
 /* eslint no-unused-vars: "error" */
 import Foo from './Foo';
@@ -163,7 +175,9 @@ import Foo from './Foo';
 // bad
 <div children="Hello World"/>;
 <Foo children={<Bar/>}/>;
+```
 
+```javascript
 // good
 <div>Hello World</div>;
 <Foo>
@@ -178,7 +192,9 @@ import Foo from './Foo';
 ```javascript
 // bad
 <div dangerouslySetInnerHTML={{__html: 'Foo'}}>Hello World</div>;
+```
 
+```javascript
 // good
 <div dangerouslySetInnerHTML={{__html: 'Foo'}}/>;
 <div>Hello World</div>;
@@ -202,7 +218,9 @@ class Foo extends React.Component {
     componentWillUpdate() {
     }
 }
+```
 
+```javascript
 // good
 ReactDOM.render(<Foo/>, app);
 
@@ -221,7 +239,9 @@ class Foo extends React.Component {
         this.setState();
     }
 }
+```
 
+```javascript
 // good
 class Foo extends React.Component {
     componentDidUpdate() {
@@ -231,7 +251,7 @@ class Foo extends React.Component {
 
 ## [react/no-direct-mutation-state](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-direct-mutation-state.md)
 
-禁止直接修改 this.state
+禁止直接修改 `this.state`
 
 ```javascript
 // bad
@@ -240,7 +260,9 @@ class Foo extends React.Component {
         this.state.name = 'foo';
     }
 }
+```
 
+```javascript
 // good
 class Foo extends React.Component {
     constructor() {
@@ -266,7 +288,9 @@ class Foo extends React.Component {
         return <div/>;
     }
 }
+```
 
+```javascript
 // good
 class Foo extends React.Component {
     constructor() {
@@ -292,7 +316,9 @@ class Foo extends React.Component {
         }
     }
 }
+```
 
+```javascript
 // good
 class Foo extends React.Component {
     updateName() {
@@ -315,7 +341,9 @@ class Foo extends React.PureComponent {
     shouldComponentUpdate() {
     }
 }
+```
 
+```javascript
 // good
 class Foo extends React.Component {
     shouldComponentUpdate() {
@@ -330,7 +358,9 @@ class Foo extends React.Component {
 ```javascript
 // bad
 const app = ReactDOM.render(<App/>, document.getElementById('app'));
+```
 
+```javascript
 // good
 ReactDOM.render(<App/>, document.getElementById('app'));
 ```
@@ -350,7 +380,9 @@ class Foo {
         return <div ref="foo"/>;
     }
 }
+```
 
+```javascript
 // good
 import {useRef, useEffect} from 'react';
 
@@ -372,7 +404,9 @@ function Foo() {
 function Foo() {
     return <div>{this.props.foo}</div>;
 }
+```
 
+```javascript
 // good
 function Foo(props) {
     return <div>{props.foo}</div>;
@@ -391,7 +425,9 @@ class Foo extends React.Component {
     componentdidupdate() {
     }
 }
+```
 
+```javascript
 // good
 class Foo extends React.Component {
     static defaultProps = {};
@@ -408,7 +444,9 @@ class Foo extends React.Component {
 ```javascript
 // bad
 <Foo>Hel>lo</Foo>;
+```
 
+```javascript
 // good
 <Foo>Hel&amp;gt;lo</Foo>;
 ```
@@ -420,7 +458,9 @@ class Foo extends React.Component {
 ```javascript
 // bad
 <div class="foo"/>;
+```
 
+```javascript
 // good
 <div className="foo"/>;
 ```
@@ -438,7 +478,9 @@ class Foo extends React.Component {
     UNSAFE_componentWillMount() {
     }
 }
+```
 
+```javascript
 // good
 class Foo extends React.Component {
 }
@@ -455,7 +497,9 @@ const Foo = createReactClass({
         return <div/>;
     }
 });
+```
 
+```javascript
 // good
 class Foo extends React.Component {
     render() {
@@ -475,7 +519,9 @@ class Foo extends React.Component {
         <div/>;
     }
 }
+```
 
+```javascript
 // good
 class Foo extends React.Component {
     render() {
@@ -492,7 +538,9 @@ class Foo extends React.Component {
 // bad
 <Foo></Foo>;
 <div></div>;
+```
 
+```javascript
 // good
 <Foo>Not empty</Foo>;
 <div>Not empty</div>;
@@ -522,7 +570,9 @@ class Foo extends React.Component {
 
     static defaultProps = {};
 }
+```
 
+```javascript
 // good
 class Foo extends React.Component {
     static defaultProps = {};
@@ -552,7 +602,9 @@ class Foo extends React.Component {
 }
 
 Foo.defaultProps = {};
+```
 
+```javascript
 // good
 class Foo extends React.Component {
     static defaultProps = {};
@@ -566,7 +618,9 @@ style 属性的取值必须是 object
 ```javascript
 // bad
 <div style="color: 'red'"/>;
+```
 
+```javascript
 // good
 <div style={{color: 'red'}}/>;
 ```
@@ -579,7 +633,9 @@ img, br 标签中禁止有 children
 // bad
 <img>foo</img>;
 <br>bar</br>;
+```
 
+```javascript
 // good
 <img/>;
 <br/>;
