@@ -1,0 +1,27 @@
+{
+  "name": "xh-polaris-style-guide",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A style guide for xh-polaris studio",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xh-polaris/style-guide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xh-polaris/style-guide/issues"
+  },
+  "homepage": "https://github.com/xh-polaris/style-guide#readme",
+  "dependencies": {
+    "vuepress": "^2.0.0-beta.51"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^2.0.0-beta.51"
+  }
+}
