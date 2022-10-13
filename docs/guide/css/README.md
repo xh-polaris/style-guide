@@ -4,6 +4,42 @@ sidebarDepth: 2
 
 # CSS 代码风格
 
+## 命名
+
++ 文件名和目录名使用短横线分隔的小写字母(kebab-case)命名规范
++ 类名使用短横线分隔的小写字母(kebab-case)命名规范
++ id和scss中的变量、函数、混合、placeholder采用小驼峰((lowerCamelCase))命名
+
+```scss
+/* class */
+.element-content {
+  /* ... */
+}
+
+/* id */
+#myDialog {
+  /* ... */
+}
+
+/* 变量 */
+$colorBlack: #000;
+
+/* 函数 */
+@function pxToRem($px) {
+  /* ... */
+}
+
+/* 混合 */
+@mixin centerBlock {
+  /* ... */
+}
+
+/* placeholder */
+%myDialog {
+  /* ... */
+}
+```
+
 ## 缩进
 
 使用soft tab（2个空格）。
@@ -199,42 +235,6 @@ url的内容要用引号；
 }
 
 li[data-type="single"] {
-  /* ... */
-}
-```
-
-## 命名
-
-+ 类名使用小写字母，以中划线分隔
-+ id采用驼峰式命名
-+ scss中的变量、函数、混合、placeholder采用驼峰式命名
-
-```scss
-/* class */
-.element-content {
-  /* ... */
-}
-
-/* id */
-#myDialog {
-  /* ... */
-}
-
-/* 变量 */
-$colorBlack: #000;
-
-/* 函数 */
-@function pxToRem($px) {
-  /* ... */
-}
-
-/* 混合 */
-@mixin centerBlock {
-  /* ... */
-}
-
-/* placeholder */
-%myDialog {
   /* ... */
 }
 ```

@@ -4,6 +4,18 @@ sidebarDepth: 2
 
 # Vue 代码风格指南
 
+## 命名规范
+
+统一使用短横线分隔的小写字母(kebab-case)命名规范
+
+属于组件或类的,统一使用大驼峰(UpperCamelCase)命名规范
+
+其他非组件或类的,统一使用小写字母开头的(kebab-case)命名规范
+
+展开node_modules中的项目依赖,会发现几乎所有的项目文件夹命名都是 kebab-case命名的,使用kebab-case命名的文件
+
+> 例：my-component.vue
+
 ## [vue/attributes-order](https://eslint.vuejs.org/rules/attributes-order)
 
 标签属性必须按规则排序
